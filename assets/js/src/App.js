@@ -114,7 +114,9 @@ Kanboard.App.prototype.hasId = function(id) {
 };
 
 Kanboard.App.prototype.showLoadingIcon = function() {
-    $("body").append('<span id="app-loading-icon">&nbsp;<i class="fa fa-spinner fa-spin"></i></span>');
+    if ($("#app-loading-icon").length === 0) {
+        $("body").append('<span id="app-loading-icon">&nbsp;<i class="fa fa-spinner fa-spin"></i></span>');
+    }
 };
 
 Kanboard.App.prototype.hideLoadingIcon = function() {
